@@ -30,13 +30,15 @@
       <button type="submit">Enviar</button>
     </form>
 
-    <div v-if="enviado" class="resultado">
-      <h2>¡Formulario Exitoso!</h2>
-      <p><strong>Nombre: </strong>{{formulario.nombre}}</p>
-      <p><strong>Mail: </strong>{{formulario.email}}</p>
-      <p><strong>Mensaje: </strong>{{formulario.mensaje}}</p>
-    </div>
-  </div> 
+    <Transition name="fade">
+      <div v-if="enviado" class="resultado">
+        <h2>¡Formulario Exitoso!</h2>
+        <p><strong>Nombre: </strong>{{formulario.nombre}}</p>
+        <p><strong>Mail: </strong>{{formulario.email}}</p>
+        <p><strong>Mensaje: </strong>{{formulario.mensaje}}</p>
+      </div>
+    </Transition>
+  </div>  
 </template>
 
 <script setup>
@@ -136,6 +138,21 @@ button:hover {
 
 .resultado p {
   margin: 10px 0;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
 }
 </style>
 
