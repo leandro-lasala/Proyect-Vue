@@ -61,15 +61,17 @@ const enviarFormulario = ()=>{
     formulario.nombre = ''
     formulario.mail = ''
     formulario.mensaje = ''
-  }, 3000)
+  }, 5000)
 }
 
 
 </script>
 
 <style scoped>
+
 .container {
-  max-width: 500px;
+  max-width: 1400px;
+  width: 100%;
   margin: 50px auto;
   padding: 20px;
   font-family: Arial, sans-serif;
@@ -78,12 +80,21 @@ const enviarFormulario = ()=>{
 h1 {
   color: #ffffff;
   text-align: center;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .campo {
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
 }
 
 label {
@@ -92,7 +103,8 @@ label {
   color: #555;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -100,7 +112,13 @@ input, textarea {
   font-family: Arial, sans-serif;
 }
 
-input:focus, textarea:focus {
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
   outline: none;
   border-color: #4CAF50;
   box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
@@ -115,6 +133,8 @@ button {
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
+  width: fit-content;
+  margin: 0 auto;
   transition: background-color 0.3s;
 }
 
@@ -123,12 +143,11 @@ button:hover {
 }
 
 .resultado {
-  margin-top: 30px;
+  max-width: 500px;
+  margin: 30px auto 0;
   padding: 20px;
-  background-color: #d4edda;
-  border: 1px solid #c3e6cb;
-  border-radius: 4px;
-  color: #0c8312;
+  background-color: #50ff85;
+  border-radius: 8px;
 }
 
 .resultado h2 {
@@ -138,6 +157,7 @@ button:hover {
 
 .resultado p {
   margin: 10px 0;
+  color: #006e21;
 }
 
 .fade-enter-active,
