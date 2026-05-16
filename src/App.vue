@@ -1,7 +1,7 @@
 <script setup>
-import HelloWorld from './components/Formulario.vue'
+import Formulario from './components/Formulario.vue';
 </script>
 
 <template>
-  <HelloWorld />
+  <Formulario />
 </template>
